@@ -1,0 +1,468 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section id="home-section" class="hero">
+
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-dark" id="ftco-navbar">
+    <form method="get" action="{% url 'search' %}">
+        <input type="text" name="query" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+
+    
+    <div class="container">
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Televisions</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <div class="d-flex">
+                        <div class="mr-4">
+                        <h6 class="dropdown-header"> TVs</h7>
+                        <a class="dropdown-item" href="{% url 'all_brands' %}">All brands</a>
+                        <a class="dropdown-item" href="{% url 'tvs_by_brand' brand='Sony' %}">Sony</a>
+                        <a class="dropdown-item" href="{% url 'tvs_by_brand' brand='LG' %}">LG</a>
+                        <a class="dropdown-item" href="{% url 'tvs_by_brand' brand='Hisense' %}">Hisense</a>
+                        <a class="dropdown-item" href="{% url 'tvs_by_brand' brand='TCL' %}">TCL</a>
+                        <a class="dropdown-item" href="{% url 'tvs_by_brand' brand='Skyworth' %}">Skyworth</a>
+                        <a class="dropdown-item" href="{% url 'tvs_by_brand' brand='Vitron' %}">Sharp</a>
+                        <a class="dropdown-item" href="{% url 'tvs_by_brand' brand='Vitron' %}">Vision plus</a>
+                        <a class="dropdown-item" href="{% url 'tvs_by_brand' brand='Vitron' %}">Vitron</a>
+                        <a class="dropdown-item" href="{% url 'tvs_by_brand' brand='Amtec' %}">Amtec</a>
+                        <a class="dropdown-item" href="{% url 'tvs_by_brand' brand='Synix' %}">Synix</a>
+                    </div>
+            
+                    <div>
+                        <h6 class="dropdown-header"> Tv Accessories</h6>
+                        <a class="dropdown-item" href="{% url 'TV_Accessories' name='Wall Mount' %}">Wall Mounts</a>
+                        <a class="dropdown-item" href="{% url 'TV_Accessories' name='TV Guard' %}">Tv guard</a>
+                        <a class="dropdown-item" href="{% url 'TV_Accessories' name='Android box' %}">Android Box</a>
+                        <a class="dropdown-item" href="{% url 'TV_Accessories' name='Remote' %}">Remotes</a>
+                        <a class="dropdown-item" href="{% url 'TV_Accessories' name='Flashdisc' %}">Flashdiscs</a>
+                        <a class="dropdown-item" href="{% url 'TV_Accessories' name='Extension' %}">Extensions</a>
+                        <a class="dropdown-item" href="{% url 'TV_Accessories' name='Antenna' %}">Antenna</a>
+                        <a class="dropdown-item" href="{% url 'TV_Accessories' name='HDMI' %}">HDMI Cables</a>
+            
+        
+         
+          <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Audio</a>
+             <div class="dropdown-menu" aria-labelledby="dropdown04">
+               <div class="d-flex">
+                       <div class="mr-4">
+                       <h6 class="dropdown-header"> Audio</h7>
+                        <a class="dropdown-item" href="{% url 'audio_systems' subcategory='Soundbars' %}">Soundbars</a>
+                        <a class="dropdown-item" href="{% url 'audio_systems' subcategory='Home Theaters' %}">Home Theaters</a>
+                        <a class="dropdown-item" href="{% url 'audio_systems' subcategory='Woofers' %}">Woofers & Subwoofers</a>
+                        <a class="dropdown-item" href="{% url 'audio_systems' subcategory='Portable Speakers' %}">Portable Speakers</a>
+                        <a class="dropdown-item" href="{% url 'audio_systems' subcategory='HIFI Systems' %}">HIFI Systems</a>
+                        <a class="dropdown-item" href="{% url 'audio_systems' subcategory='Party Speakers' %}">Party Speakers</a>
+                        <a class="dropdown-item" href="{% url 'audio_systems' subcategory='Voice Recorders' %}">Voice Recorders</a>
+                        <a class="dropdown-item" href="{% url 'audio_systems' subcategory='Headphones' %}">Headphones</a>
+                        <a class="dropdown-item" href="{% url 'audio_systems' subcategory='Earbuds' %}">Earbuds</a>
+                        </div>
+                          
+                        <div>
+                        <h6 class="dropdown-header"> Search Audio by Price</h6>
+                        <a class="dropdown-item" href="{% url 'audio_systems_by_price' min_price=0 max_price=3000 %}">Below KES 3,000</a>
+                        <a class="dropdown-item" href="{% url 'audio_systems_by_price' min_price=3010 max_price=10000 %}">From KES 3,000 to KES 10,000</a>
+                        <a class="dropdown-item" href="{% url 'audio_systems_by_price' min_price=10001 max_price=15000 %}">From KES 10,000 to KES 15,000</a>
+                        <a class="dropdown-item" href="{% url 'audio_systems_by_price' min_price=15001 max_price=25000 %}">From KES 15,000 to KES 25,000</a>
+                        <a class="dropdown-item" href="{% url 'audio_systems_by_price' min_price=25001 max_price=35000 %}">From KES 25,000 to KES 35,000</a>
+                        <a class="dropdown-item" href="{% url 'audio_systems_by_price' min_price=35001 max_price=100000 %}">Above KES 35,000</a>
+                          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home Appliances</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <div class="d-flex">
+                      <div class="mr-4">
+                      <h6 class="dropdown-header"> </h6>
+                      <a class="dropdown-item" href="{% url 'home_appliances' subcategory='Refridgerators' %}">Refridgerators</a>
+                      <a class="dropdown-item" href="{% url 'home_appliances' subcategory='Dispensers' %}">Water dispensers</a>
+                      <a class="dropdown-item" href="{% url 'home_appliances' subcategory='Cookers' %}">Standing cookers</a>
+                      <a class="dropdown-item" href="{% url 'home_appliances' subcategory='Microwaves' %}">Microwaves</a>
+                      <a class="dropdown-item" href="{% url 'home_appliances' subcategory='Washing Machine' %}">Washine Machines</a>
+                      <a class="dropdown-item" href="{% url 'home_appliances' subcategory='vacuum cleaners' %}">Vacuum cleaners</a>
+                      <a class="dropdown-item" href="{% url 'home_appliances' subcategory='vacuum cleaners' %}">Freezers</a>
+                    </div>
+                      
+                      <div>
+                      <h6 class="dropdown-header"> </h6>
+                      <a class="dropdown-item" href="{% url 'home_appliances' subcategory='fans' %}"> Fans</a>
+                      <a class="dropdown-item" href="{% url 'home_appliances' subcategory='Heaters' %}"> Heaters</a>
+                      <a class="dropdown-item" href="{% url 'home_appliances' subcategory='blenders' %}">Coffee Makers</a>
+                      <a class="dropdown-item" href="{% url 'home_appliances' subcategory='cofee maker' %}">Blenders</a>
+                      <a class="dropdown-item" href="{% url 'home_appliances' subcategory='irons' %}">Irons</a>
+                      <a class="dropdown-item" href="{% url 'home_appliances' subcategory='kettles' %}">kettles </a>
+                      <a class="dropdown-item" href="{% url 'home_appliances' subcategory='toasters' %}"> Toasters</a>
+                      
+                      
+                      
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Phones & Tablets</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                          <a class="dropdown-item" href="{% url 'phones_tablets' subcategory='iphone' %}">Apple</a>
+                          <a class="dropdown-item" href="{% url 'phones_tablets' subcategory='samsung' %}">Samsung</a>
+                          <a class="dropdown-item" href="{% url 'phones_tablets' subcategory='xiaomi' %}">Xiaomi</a>
+                          <a class="dropdown-item" href="{% url 'phones_tablets' subcategory='redmi' %}">Redmi</a>
+                          <a class="dropdown-item" href="{% url 'phones_tablets' subcategory='oppo' %}">Oppo</a>
+                          <a class="dropdown-item" href="{% url 'phones_tablets' subcategory='oneplus' %}">Oneplus</a>
+                          <a class="dropdown-item" href="{% url 'phones_tablets' subcategory='infinix' %}">Infinix</a>
+                          <a class="dropdown-item" href="{% url 'phones_tablets' subcategory='nokia' %}">Nokia</a>
+                          <a class="dropdown-item" href="{% url 'phones_tablets' subcategory='tecno' %}">Tecno</a>
+
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gaming & Cameras</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown04">
+                              <a class="dropdown-item" href="{% url 'hisense_tvs' %}">PlayStation consoles</a>
+                              <a class="dropdown-item" href="{% url 'hisense_tvs' %}">Gaming controllers</a>
+                              <a class="dropdown-item" href="{% url 'hisense_tvs' %}">Canon Cameras</a>
+                              <a class="dropdown-item" href="{% url 'hisense_tvs' %}">Nikon Cameras</a>
+                            
+
+                             
+                                  <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Computers</a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                      <a class="dropdown-item" href="{% url 'hisense_tvs' %}">Hp laptops</a>
+                                      <a class="dropdown-item" href="{% url 'hisense_tvs' %}">Lenovo laptops</a>
+                                      <a class="dropdown-item" href="{% url 'hisense_tvs' %}">Dell Laptops</a>
+                                      <a class="dropdown-item" href="{% url 'hisense_tvs' %}">Toshiba laptops</a>
+                                      <a class="dropdown-item" href="{% url 'tcl_tvs' %}">Macbooks</a>
+                                      <a class="dropdown-item" href="{% url 'hisense_tvs' %}">Monitors</a>
+                                      <a class="dropdown-item" href="{% url 'hisense_tvs' %}">CPU</a>
+                                      <a class="dropdown-item" href="{% url 'hisense_tvs' %}">Computer Accessories</a>
+
+                                      <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Electric</a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                          <a class="dropdown-item" href="{% url 'hisense_tvs' %}">Light switches & sockets</a>
+                                          <a class="dropdown-item" href="{% url 'hisense_tvs' %}">circuit breakers</a>
+                                          <a class="dropdown-item" href="{% url 'hisense_tvs' %}">MPPT</a>
+                                          <a class="dropdown-item" href="{% url 'hisense_tvs' %}">Conext Monitor</a>
+                                          <a class="dropdown-item" href="{% url 'tcl_tvs' %}">Solar lights</a>
+                                          <a class="dropdown-item" href="{% url 'hisense_tvs' %}">Solar battries</a>
+                                          
+         
+                                      
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+</section>
+    
+
+    
+<section id="home-section" class="hero">
+  <div class="home-slider owl-carousel">
+      <div class="slider-item" style="background-image: url({% static 'images/WZ.JPG' %});">
+          <div class="overlay"></div>
+          <div class="container">
+              <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+                  <div class="col-md-12 ftco-animate text-center">
+                      <h1 class="mb-2"></h1>
+                      <h2 class="subheading mb-4"></h2>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="slider-item" style="background-image: url({% static 'images/netflix.jpg' %});">
+          <div class="overlay"></div>
+          <div class="container">
+              <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+                  <div class="col-sm-12 ftco-animate text-center">
+                      <h1 class="mb-2"></h1>
+                      <h2 class="subheading mb-4"></h2>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="slider-item" style="background-image: url({% static 'images/Ram.jpg' %});">
+          <div class="overlay"></div>
+          <div class="container">
+              <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+                  <div class="col-sm-12 ftco-animate text-center">
+                      <h1 class="mb-2"></h1>
+                      <h2 class="subheading mb-4"></h2>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="slider-item" style="background-image: url({% static 'images/camera.jpg' %});">
+          <div class="overlay"></div>
+          <div class="container">
+              <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+                  <div class="col-sm-12 ftco-animate text-center">
+                      <h1 class="mb-2"></h1>
+                      <h2 class="subheading mb-4"></h2>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+<section class="ftco-section">
+  <div class="container">
+      <div class="row no-gutters ftco-services">
+          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+              <div class="media block-6 services mb-md-0 mb-4">
+                  <div class="icon bg-color-1 active d-flex justify-content-center align-items-center mb-2">
+                      <span class="flaticon-shipped"></span>
+                  </div>
+                  <div class="media-body">
+                      <h3 class="heading">Pay on delivery</h3>
+                      <span>Countrywide </span>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+              <div class="media block-6 services mb-md-0 mb-4">
+                  <div class="icon bg-color-2 d-flex justify-content-center align-items-center mb-2">
+                      <span class="flaticon-diet"></span>
+                  </div>
+                  <div class="media-body">
+                      <h3 class="heading">ORIGINAL</h3>
+                      <span>Product well package</span>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+              <div class="media block-6 services mb-md-0 mb-4">
+                  <div class="icon bg-color-3 d-flex justify-content-center align-items-center mb-2">
+                      <span class="flaticon-award"></span>
+                  </div>
+                  <div class="media-body">
+                      <h3 class="heading">Superior Quality</h3>
+                      <span>Quality Products</span>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+              <div class="media block-6 services mb-md-0 mb-4">
+                  <div class="icon bg-color-4 d-flex justify-content-center align-items-center mb-2">
+                      <span class="flaticon-customer-service"></span>
+                  </div>
+                  <div class="media-body">
+                      <h3 class="heading">Support</h3>
+                      <span>24/7 Support</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>>
+
+
+
+<div class="container">
+  <div class="row">
+    {% if products %}
+      {% for product in products %}
+      <div class="col-md-6 col-lg-3 ftco-animate">
+        <div class="product d-flex flex-column">
+          <a href="{% url 'product-details' product.id %}" class="img-prod">
+            <img class="img-fluid product-img" src="{{ product.photo.url }}" alt="Product Image">
+            <div class="overlay"></div>
+          </a>
+          <div class="text py-3 pb-4 px-3 text-center flex-grow-1 d-flex flex-column justify-content-between">
+            <h3><a href="{% url 'product-details' product.id %}">{{ product.name }}</a></h3>
+            <p>{{ product.brand }}</p>
+            <div class="pricing">
+              <!-- Pricing details here -->
+            </div>
+            <div class="bottom-area d-flex px-3">
+              <div class="m-auto d-flex">
+                <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                  <span><i class="ion-ios-menu"></i></span>
+                </a>
+                <a href="{%  url 'add_to_cart' product.id  %}" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                  <span><i class="ion-ios-cart"></i></span>
+                </a>
+                <a href="#" class="heart d-flex justify-content-center align-items-center">
+                  <span><i class="ion-ios-heart"></i></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}
+    <h2 style="margin: auto">Sorry! There are no Products Available!</h2>
+    {% endif %}
+  </div>
+</div>
+
+
+
+  <title>Deal of the Week</title>
+</head>
+<body>
+  <section class="ftco-section img" style="background-image: url({% static 'images/test2.PNG' %});">
+    <div class="container">
+      <div class="row justify-content-end">
+        <div class="col-md-6 heading-section ftco-animate deal-of-the-day">
+          <span class="subheading">Best Price For You</span>
+          <h2 class="mb-4">Deal of the week</h2>
+          <h3><a href="#">Hisense 55 Smart TV</a></h3>
+          <h3 ><strong> Was KES 50,000 Now KES 47,500. Save 2500<a href="#"> </a></strong></h3>
+          <div id="timer" class="d-flex mt-5">
+            <div class="time" id="days"></div>
+            <div class="time pl-3" id="hours"></div>
+            <div class="time pl-3" id="minutes"></div>
+            <div class="time pl-3" id="seconds"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+    
+
+<section class="ftco-section testimony-section">
+  <div class="container">
+    <div class="row justify-content-center mb-5 pb-3">
+      <div class="col-md-7 heading-section ftco-animate text-center">
+        <span class="subheading">Testimony</span>
+        <h2 class="mb-4">Our satisfied customer says</h2>
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+      </div>
+    </div>
+    <div class="row ftco-animate">
+      <div class="col-md-12">
+        <div class="carousel-testimony owl-carousel">
+          <div class="item">
+            <div class="testimony-wrap p-4 pb-5">
+              <div class="user-img mb-5" style="background-image: url({% static 'images/person_1.jpg' %})">
+                <span class="quote d-flex align-items-center justify-content-center">
+                  <i class="icon-quote-left"></i>
+                </span>
+              </div>
+              <div class="text text-center">
+                <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <p class="name">Gustav</p>
+                <span class="position">Co Founder</span>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="testimony-wrap p-4 pb-5">
+              <div class="user-img mb-5" style="background-image: url({% static 'images/person_2.jpg' %})">
+                <span class="quote d-flex align-items-center justify-content-center">
+                  <i class="icon-quote-left"></i>
+                </span>
+              </div>
+              <div class="text text-center">
+                <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <p class="name">Don Ngize</p>
+                <span class="position">Director</span>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="testimony-wrap p-4 pb-5">
+              <div class="user-img mb-5" style="background-image: url({% static 'images/person_3.jpg' %})">
+                <span class="quote d-flex align-items-center justify-content-center">
+                  <i class="icon-quote-left"></i>
+                </span>
+              </div>
+              <div class="text text-center">
+                <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <p class="name">Garreth Smith</p>
+                <span class="position">UI Designer</span>
+              </div>
+            </div>
+          </div>
+          
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="path/to/bootstrap.css">
+  <style>
+    .partner-logo {
+      width: 150px; 
+      height: 150px;
+      object-fit: contain; 
+      display: block; 
+      margin: 0 auto; 
+    }
+  </style>
+  <title>Partner Logos</title>
+</head>
+<body>
+  <section class="ftco-section ftco-partner">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm ftco-animate">
+          <a href="#" class="partner"><img src="{% static 'images/Sony.png' %}" class="partner-logo img-fluid" alt="Sony"></a>
+        </div>
+        <div class="col-sm ftco-animate">
+          <a href="#" class="partner"><img src="{% static 'images/schneider-electric-vector-logo.jpg' %}" class="partner-logo img-fluid" alt="Schneider Electric"></a>
+        </div>
+        <div class="col-sm ftco-animate">
+          <a href="#" class="partner"><img src="{% static 'images/LGlogo.png' %}" class="partner-logo img-fluid" alt="LG"></a>
+        </div>
+        <div class="col-sm ftco-animate">
+          <a href="#" class="partner"><img src="{% static 'images/Vitron.png' %}" class="partner-logo img-fluid" alt="Vitron"></a>
+        </div>
+        <div class="col-sm ftco-animate">
+          <a href="#" class="partner"><img src="{% static 'images/Vision-Plus.png' %}" class="partner-logo img-fluid" alt="Vision Plus"></a>
+        </div>
+        <div class="col-sm ftco-animate">
+          <a href="#" class="partner"><img src="{% static 'images/TCL.png' %}" class="partner-logo img-fluid" alt="TCL"></a>
+        </div>
+        <div class="col-sm ftco-animate">
+          <a href="#" class="partner"><img src="{% static 'images/Samsung-logo.png' %}" class="partner-logo img-fluid" alt="Samsung"></a>
+        </div>
+        <div class="col-sm ftco-animate">
+          <a href="#" class="partner"><img src="{% static 'images/skyworth.png' %}" class="partner-logo img-fluid" alt="Skyworth"></a>
+        </div>
+        <div class="col-sm ftco-animate">
+          <a href="#" class="partner"><img src="{% static 'images/Hisense.png' %}" class="partner-logo img-fluid" alt="Hisense"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="path/to/bootstrap.js"></script>
+</body>
+</html>
+
+<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
+  <div class="container py-4">
+    <div class="row d-flex justify-content-center py-5">
+      <div class="col-md-6">
+        <h2 style="font-size: 22px;" class="mb-0">Subcribe to our Newsletter</h2>
+        <span>Get e-mail updates about our latest shops and special offers</span>
+      </div>
+      <div class="col-md-6 d-flex align-items-center">
+        <form class="subscribe-form" method=POST>
+          <div class="form-group d-flex">
+            {% csrf_token %}
+            {{ forms.email }}
+            <input type="submit" value="Subscribe" class="submit px-3">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
